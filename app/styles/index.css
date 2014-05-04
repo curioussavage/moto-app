@@ -1,0 +1,25 @@
+header {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 2em;
+}
+
+header {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+header h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+    font-size: 2em;
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+}
+
+#searchbox

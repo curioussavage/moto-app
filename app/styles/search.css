@@ -1,0 +1,37 @@
+#searchresults {
+    width: 68%;
+    float: right;
+    /*height: 700px;*/
+}
+
+.resultpreview {
+    float: ;
+    margin-left:11em;
+}
+.result{
+    max-width: 470px;
+
+}
+.mainpic {
+    float: left;
+}
+
+#searchbox {
+  float: left;
+    /*border: 2px solid black;*/
+    width: 30%;
+    padding: 10px;
+}
+
+#searchbuttons {
+    width: 70px;
+}
+.makemenu {
+    margin: 5px;
+}
+
+#searchcontainer {
+    max-width: 700px;
+    /*height: 800px;*/
+
+}
