@@ -5,15 +5,20 @@
 }
 
 .resultpreview {
-    float: ;
+
     margin-left:11em;
 }
 .result{
     max-width: 470px;
 
 }
+li {
+    list-style: none;
+}
 .mainpic {
     float: left;
+    width: 10em;
+    height: 10em;
 }
 
 #searchbox {

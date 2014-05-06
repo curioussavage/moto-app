@@ -4,7 +4,7 @@
     <!-- form for searching Adds-->
     <form class="form-horizontal form-group">
         <!-- keyword search-->
-        <label>Search  </label><br><input label="Search"  type="text" class = "input-large"><br>
+        <label>Search  </label><br><input label="Search"  type="text" class = "input-large" ng-model="search.$"><br>
         <!-- select high and low price!!-->
         <label>Price Range  </label><br><input label="Search"  type="text" class = "input-large" placeholder="Low"><br><input label="Search"  type="text" class = "input-large" placeholder="High"><br>
         <div class="btn-group makemenu" >
@@ -34,16 +34,15 @@
 
 </div>
 <div id="searchresults" class="well" ng-controller="MainCtrl">
-   <div ng-repeat="result in searchresults" class="result well">
-       <img class="mainpic img-responsive" src="{{result.mainimage}}">
+   <div ng-repeat="result in searchresults | filter:search:strict" class="result well">
+       <a ui-sref="listing:{{result.id}}"><img class="mainpic img-responsive" src="{{result.mainimage}}"></a>
        <div class="resultpreview ">
            <h3>{{result.title}}</h3>
-           <ul class = "addDetails">
-               <li>{{result.make}}</li>
-               <li>{{result.model}}</li>
-               <li>{{result.year}}</li>
-               <li>{{result.mileage}}</li>
-           </ul>
+           <div class = "addDetails">
+
+               <span>Make: {{result.make}} Model: {{result.model}}</span>
+           </div>
+           <h4>Price: {{result.price}}</h4>
        </div>
 
        <div>{{result.description}}</div>

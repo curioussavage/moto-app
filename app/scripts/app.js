@@ -41,6 +41,15 @@ var myapp = angular.module('motoApp', ['ui.router' ]);
 //                    return TurtleService.getTeam($stateParams.teamId);
 //                }
 //        }
-        });
-
+        })
+        .state('listing', {
+            url: '/search/:listingId',
+            templateUrl: 'views/listing.html',
+            controller: 'TeamCtrl'
+//            resolve: {
+//                team: function (TurtleService, $stateParams) {
+//                    return TurtleService.getTeam($stateParams.teamId);
+//                }
+//        }
+        })
 });
