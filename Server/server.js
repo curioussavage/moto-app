@@ -3,7 +3,8 @@ var app = express();
 bodyParser = require('body-parser')
 
 
-app.use(bodyParser())
+app.use(bodyParser());
+
 // import sequelize and connect to the database
 var Sequelize = require('Sequelize');
 
@@ -20,6 +21,8 @@ sequelize.authenticate().complete(function(err){
     }
 });
 
+//    setting up the adds table   /////////////////
+
 var Add = sequelize.define('Add', {     ///  update the fields here with the appropriate ones for
     title: Sequelize.STRING,
     make: Sequelize.ENUM('bmw', 'can-am', 'ducati', 'harley', 'davidson', 'honda', 'ktm', 'kawasaki', 'suzuki', 'triumph', 'victory', 'yamaha', 'indian', 'moto guzzi', 'vespa', 'aprilia', 'hyosung', 'cleveland cycle works'),
@@ -34,6 +37,8 @@ var Add = sequelize.define('Add', {     ///  update the fields here with the app
 
 sequelize.sync();
 
+///////// handle requests //////////////
+
 app.get('/', function(req, res ){
 
     Add.all().success(function(adds) {
@@ -46,13 +51,6 @@ app.get('/', function(req, res ){
 });
 
 
-//app.get('/listings', function(req, res){
-//    var listings = [];
-//
-//    listings = [{"id": 1, "title": "the best listing ever"},{"id":2, "title":"cool cat listing"}]
-//    res.json(listings);
-//
-//});
 
 app.post('/listing', function(req, res) {
     var newadd = {

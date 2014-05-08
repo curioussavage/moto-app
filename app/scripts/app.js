@@ -15,17 +15,17 @@ var myapp = angular.module('motoApp', ['ui.router' ]);
         .state('Search', {
             url: '/search/',
             templateUrl: 'views/search.html',
-            controller: 'MainCtrl'
-//            resolve: {
-//                team: function (TurtleService, $stateParams) {
-//                    return TurtleService.getTeam($stateParams.teamId);
-//                }
-//        }
+            controller: 'SearchCtrl',
+            resolve: {
+                adds: function (Search) {
+                    return Search.getAdds();
+                }
+        }
         })
         .state('Sell', {
             url: '/sell/',
             templateUrl: 'views/Sell.html',
-            controller: 'TeamCtrl'
+            controller: 'MainCtrl'
 //            resolve: {
 //                team: function (TurtleService, $stateParams) {
 //                    return TurtleService.getTeam($stateParams.teamId);
@@ -35,7 +35,7 @@ var myapp = angular.module('motoApp', ['ui.router' ]);
         .state('Blog', {
             url: '/blog/',
             templateUrl: 'views/blog.html',
-            controller: 'TeamCtrl'
+            controller: 'MainCtrl'
 //            resolve: {
 //                team: function (TurtleService, $stateParams) {
 //                    return TurtleService.getTeam($stateParams.teamId);
@@ -45,7 +45,7 @@ var myapp = angular.module('motoApp', ['ui.router' ]);
         .state('listing', {
             url: '/search/:listingId',
             templateUrl: 'views/listing.html',
-            controller: 'TeamCtrl'
+            controller: 'MainCtrl'
 //            resolve: {
 //                team: function (TurtleService, $stateParams) {
 //                    return TurtleService.getTeam($stateParams.teamId);

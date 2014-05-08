@@ -33,7 +33,7 @@
     </form>
 
 </div>
-<div id="searchresults" class="well" ng-controller="MainCtrl">
+<div id="searchresults" class="well" >
    <div ng-repeat="result in searchresults | filter:search:strict" class="result well">
        <a ui-sref="listing:{{result.id}}"><img class="mainpic img-responsive" src="{{result.mainimage}}"></a>
        <div class="resultpreview ">
