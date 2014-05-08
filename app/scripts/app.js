@@ -23,7 +23,7 @@ var myapp = angular.module('motoApp', ['ui.router' ]);
 //        }
         })
         .state('Sell', {
-            url: '/search/',
+            url: '/sell/',
             templateUrl: 'views/Sell.html',
             controller: 'TeamCtrl'
 //            resolve: {
@@ -33,7 +33,7 @@ var myapp = angular.module('motoApp', ['ui.router' ]);
 //        }
         })
         .state('Blog', {
-            url: '/search/',
+            url: '/blog/',
             templateUrl: 'views/blog.html',
             controller: 'TeamCtrl'
 //            resolve: {

@@ -2,7 +2,10 @@
   "name": "motoapp",
   "version": "0.0.0",
   "dependencies": {
-      "express": "4.1.1"
+    "express": "4.1.1",
+    "sequelize": "^1.7.4",
+    "mysql": "^2.2.0",
+    "body-parser": "^1.0.2"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
