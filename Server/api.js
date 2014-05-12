@@ -7,7 +7,8 @@ exports.seeAdds = function(req, res){
     Listing.find()
 
         .exec(function(err, posts) {
-            res.sendfile('../app' + '/index.html');
+            // res.sendfile('../app' + '/index.html');
+            res.sendfile(path, {'app': '/index.html'});
         });
 
 }
