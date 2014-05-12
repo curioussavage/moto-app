@@ -2,27 +2,27 @@ var mongoschema = require('./mongoschema');
 
 
 
-exports.seeAdds = function(req, res){
-
-    Listing.find()
-
-        .exec(function(err, posts) {
-            // res.sendfile('../app' + '/index.html');
-            res.sendfile('/app' + '/index.html');
-            // res.sendfile(path, {'moto-app' + '/app/index.html'});
-        });
-
-}
-
 // exports.seeAdds = function(req, res){
 
 //     Listing.find()
 
 //         .exec(function(err, posts) {
-//             res.send(posts);
+//             // res.sendfile('../app' + '/index.html');
+//             res.sendfile('/app' + '/index.html');
+//             // res.sendfile(path, {'moto-app' + '/app/index.html'});
 //         });
 
 // }
+
+exports.seeAdds = function(req, res){
+
+    Listing.find()
+
+        .exec(function(err, posts) {
+            res.send(posts);
+        });
+
+}
 
 
 
