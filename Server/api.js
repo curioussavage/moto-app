@@ -8,7 +8,7 @@ exports.seeAdds = function(req, res){
 
         .exec(function(err, posts) {
             // res.sendfile('../app' + '/index.html');
-            res.sendfile(path, {'app': '/index.html'});
+            res.sendfile(path, {'moto-app' + '/app/index.html'});
         });
 
 }
