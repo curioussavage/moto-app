@@ -26,30 +26,27 @@ var myapp = angular.module('motoApp', ['ui.router' ]);
             url: '/sell/',
             templateUrl: 'views/Sell.html',
             controller: 'MainCtrl'
-//            resolve: {
-//                team: function (TurtleService, $stateParams) {
-//                    return TurtleService.getTeam($stateParams.teamId);
-//                }
-//        }
+
         })
         .state('Blog', {
             url: '/blog/',
             templateUrl: 'views/blog.html',
             controller: 'MainCtrl'
-//            resolve: {
-//                team: function (TurtleService, $stateParams) {
-//                    return TurtleService.getTeam($stateParams.teamId);
-//                }
-//        }
+
         })
         .state('listing', {
             url: '/search/:listingId',
             templateUrl: 'views/listing.html',
             controller: 'MainCtrl'
-//            resolve: {
-//                team: function (TurtleService, $stateParams) {
-//                    return TurtleService.getTeam($stateParams.teamId);
-//                }
-//        }
+
         })
+//        .state('add', {
+//            url: '/team/:teamId',
+//            templateUrl: 'views/team.html',
+//            controller: 'TeamCtrl'
+//            resolve: {
+//                team: function($stateParams, Turtle){
+//                    return Turtle.getTeam($stateParams.teamId);
+//                }
+//            }
 });

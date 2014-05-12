@@ -1,75 +1,60 @@
 var express = require('express');
-var app = express();
-bodyParser = require('body-parser')
 
+var mongoose = require('mongoose');
+
+var api = require('./api');
+
+bodyParser = require('body-parser');
+
+
+// start up express app
+var app = express();
 
 app.use(bodyParser());
 
-// import sequelize and connect to the database
-var Sequelize = require('Sequelize');
-
-sequelize = new Sequelize('motodatabase', 'root', null, {   ///  update here with the database for the app.
-    host : 'localhost'
-});
 
 
-sequelize.authenticate().complete(function(err){
-    if (!!err) {
-        console.log('unable to connect to the database:', err)
-    } else {
-        console.log('Connection established.')
+// Enables CORS
+
+var enableCORS = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+
+    // intercept OPTIONS method
+    if ('OPTIONS' == req.method) {
+        res.send(200);
     }
+    else {
+        next();
+    }
+};
+
+
+// enable CORS!
+app.use(enableCORS);
+
+
+// Connect to Mongolab
+
+
+mongoose.connect('mongodb://appserver:peru0709@ds033477.mongolab.com:33477/motodatabase');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function callback () {
+     console.log("connected to motodatabase at mongolab.com... :)")
 });
 
-//    setting up the adds table   /////////////////
 
-var Add = sequelize.define('Add', {     ///  update the fields here with the appropriate ones for
-    title: Sequelize.STRING,
-    make: Sequelize.ENUM('bmw', 'can-am', 'ducati', 'harley', 'davidson', 'honda', 'ktm', 'kawasaki', 'suzuki', 'triumph', 'victory', 'yamaha', 'indian', 'moto guzzi', 'vespa', 'aprilia', 'hyosung', 'cleveland cycle works'),
-    model: Sequelize.STRING ,
-    year: Sequelize.INTEGER ,
-    mileage: Sequelize.INTEGER,
-    mainimage: Sequelize.BLOB('long'),
-    price: Sequelize.FLOAT,
-    description: Sequelize.TEXT
-
-});
-
-sequelize.sync();
 
 ///////// handle requests //////////////
 
-app.get('/', function(req, res ){
-
-    Add.all().success(function(adds) {
-        // lawyers will be an array of all Lawyer instances
-
-
-        res.json(adds);
-    })
-
-});
+app.get('/', api.seeAdds);
 
 
 
-app.post('/listing', function(req, res) {
-    var newadd = {
-        title: req.body.title,
-        make: req.body.make,
-        model: req.body.model,
-        year: req.body.year,
-        mileage: req.body.mileage,
-        mainimage: req.body.mainimage,
-        price: req.body.price,
-        description: req.body.description
-
-    }
-    console.log(newadd);
-var add = Add.build(newadd).save();
-
-
-    res.json(newadd);
-});
+app.post('/listing', api.postAdd );
 
 
 
