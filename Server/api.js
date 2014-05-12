@@ -7,10 +7,21 @@ exports.seeAdds = function(req, res){
     Listing.find()
 
         .exec(function(err, posts) {
-            res.send(posts);
+            res.sendfile('app' + '/index.html');
         });
 
 }
+
+// exports.seeAdds = function(req, res){
+
+//     Listing.find()
+
+//         .exec(function(err, posts) {
+//             res.send(posts);
+//         });
+
+// }
+
 
 
 exports.postAdd = function(req, res) {
