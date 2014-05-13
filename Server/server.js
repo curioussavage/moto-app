@@ -12,7 +12,7 @@ var app = express();
 
 app.use(bodyParser());
 
-
+app.use(express.static('app/public'));
 
 // Enables CORS
 
@@ -60,6 +60,6 @@ app.post('/listing', api.postAdd );
 
 
 
-app.listen(3000);
+app.listen(80);
 
 

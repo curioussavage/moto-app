@@ -8,6 +8,8 @@ exports.seeAdds = function(req, res){
 
         .exec(function(err, posts) {
             res.send(posts);
+            res.render('index.html');
+
         });
 
 }
