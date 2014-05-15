@@ -13,7 +13,7 @@ app.use('/', express.static('moto-app' + '/app')); // more used for js and css f
 
 app.use(bodyParser());
 
-app.use(express.static('app/public'));
+app.use(express.static(__dirname + '/app'));
 
 // Enables CORS
 
@@ -51,7 +51,7 @@ db.once('open', function callback () {
 
 ///////// handle requests //////////////
 
-app.get('/', api.seeAdds);
+app.get('/search', api.seeAdds);
 
 
 

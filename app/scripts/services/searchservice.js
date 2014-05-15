@@ -6,7 +6,7 @@ angular.module('motoApp')
     return {
         getAdds: function(){
             var deferred = $q.defer();
-            $http({method: 'GET', url: 'localhost:3000'})
+            $http({method: 'GET', url: 'www.utahmotomarket.com/search/'})
                 .success(function(data){
                     deferred.resolve(data);
                 });
