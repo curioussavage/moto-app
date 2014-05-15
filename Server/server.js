@@ -9,7 +9,7 @@ bodyParser = require('body-parser');
 
 // start up express app
 var app = express();
-app.use('/', express.static('moto-app' + '/app')); // more used for js and css files
+app.use('/', express.static('moto-app' + '/public'));
 
 app.use(bodyParser());
 
