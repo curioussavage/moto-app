@@ -13,7 +13,7 @@ app.use('/', express.static('moto-app' + '/public'));
 
 app.use(bodyParser());
 
-app.use(express.static(__dirname + '/app'));
+app.use(express.static(__dirname + '/public'));
 
 // Enables CORS
 
