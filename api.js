@@ -19,7 +19,7 @@ exports.seeAdds = function(req, res, mongoschema){
     Listing.find()
 
         .exec(function(err, posts) {
-           
+
             res.send(posts);
         });
 
