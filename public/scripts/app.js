@@ -18,6 +18,7 @@ var myapp = angular.module('motoApp', ['ui.router' ]);
             controller: 'SearchCtrl',
             resolve: {
                 adds: function (Search) {
+
                     return Search.getAdds();
                 }
         }

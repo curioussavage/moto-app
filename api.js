@@ -14,11 +14,12 @@ var mongoschema = require('./mongoschema');
 
 // }
 
-exports.seeAdds = function(req, res){
+exports.seeAdds = function(req, res, mongoschema){
 
     Listing.find()
 
         .exec(function(err, posts) {
+           
             res.send(posts);
         });
 

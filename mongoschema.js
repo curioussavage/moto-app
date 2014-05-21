@@ -13,9 +13,10 @@ var addSchema = mongoose.Schema({  // pulled in from dans app, needs more custom
     description: Number
 });
 
-Listing = mongoose.model('Adds' , addSchema);
+var Listing = mongoose.model('Listing' , addSchema);
 
 module.exports = Listing;
+
 
 //
 //title: Sequelize.STRING,

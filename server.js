@@ -44,7 +44,7 @@ mongoose.connect('mongodb://appserver:peru0709@ds033477.mongolab.com:33477/motod
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function callback () {
-     console.log("connected to motodatabase at mongolab.com... :)")
+     console.log("connected to motodatabase at mongolab.com... ")
 });
 
 
@@ -54,13 +54,12 @@ db.once('open', function callback () {
 app.get('/search', api.seeAdds);
 
 
-
 app.post('/listing', api.postAdd );
 
 
 
 
 
-app.listen(80);
+app.listen(9000);
 
 
