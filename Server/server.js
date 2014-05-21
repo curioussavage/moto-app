@@ -9,12 +9,11 @@ bodyParser = require('body-parser');
 
 // start up express app
 var app = express();
-app.use('/', express.static('moto-app' + '/public'));
+app.use(express.static( __dirname + '/public'));
 
 app.use(bodyParser());
 
-app.use(express.directory('public'));
-app.use(express.static('public'));
+
 
 // Enables CORS
 

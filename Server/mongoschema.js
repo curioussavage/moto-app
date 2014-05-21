@@ -26,3 +26,5 @@ module.exports = Listing;
 //    mainimage: Sequelize.BLOB('long'),
 //    price: Sequelize.FLOAT,
 //    description: Sequelize.TEXT
+
+
