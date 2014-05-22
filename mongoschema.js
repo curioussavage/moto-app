@@ -6,14 +6,14 @@ var mongoose = require('mongoose');
 
 var addSchema = mongoose.Schema({  // pulled in from dans app, needs more customization.
     make: String,
-    model : String,
+    model: String,
     year: Number,
     mileage: Number,
     price: Number,
     description: Number
 });
 
-var Listing = mongoose.model('Listing' , addSchema);
+var Listing = mongoose.model('listing', addSchema);
 
 module.exports = Listing;
 

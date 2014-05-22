@@ -9,8 +9,11 @@ bodyParser = require('body-parser');
 
 // start up express app
 var app = express();
-app.use(express.static( __dirname + '/public'));
 
+// serve static files
+app.use(express.static( __dirname + '/app'));
+
+// body parser, is it ever not necessary?
 app.use(bodyParser());
 
 
@@ -51,6 +54,7 @@ db.once('open', function callback () {
 
 ///////// handle requests //////////////
 
+
 app.get('/search', api.seeAdds);
 
 
@@ -60,6 +64,8 @@ app.post('/listing', api.postAdd );
 
 
 
-app.listen(80);
+app.listen(80, function (){
+    console.log("server listening at port 80..")
+});
 
 
