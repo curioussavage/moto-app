@@ -83,7 +83,17 @@ body {
 /*min-width: 20em;*/
 width: 325px;
 height: 250px ;
+    background-color: #717877;
+    color:white;
+    font-size: 3em;
 }
 #rightlink {
     float: right;
+}
+
+.mainbanner {
+    background-image:url("../images/Motorcycle_by_Diacon.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    min-height: 400px;
 }

@@ -1,20 +1,75 @@
-<div class="makeadd well">
-    <form>
-        <div class="input-group">
-            <form class="input-group">
-                <fieldset class="pure-group">
-                    <input type="text" class="" placeholder="Username">
-                    <input type="text" class="" placeholder="Password">
-                    <input type="email" class="" placeholder="Email">
-                </fieldset>
+<div class="makeadd well" ng-controller="SellCtrl">
 
-                <fieldset class="input-group">
-                    <input type="text" class="" placeholder="Another Group">
-                    <input type="text" class="" placeholder="More Stuff">
-                </fieldset>
 
-                <button type="submit" class="btn  ">Sign in</button>
-            </form>
-        </div>
-    </form>
+        <form role="form" style="width:400px; margin: 0 auto;">
+            <h1>Post your Add</h1>
+
+            <div class="required-field-block">
+                <input type="text" placeholder="Name" class="form-control">
+
+            </div>
+
+
+            <div class="required-field-block">
+                <input type="text" placeholder="Email" class="form-control">
+
+            </div>
+
+            <input type="text" placeholder="Phone" class="form-control">
+
+
+            <select
+                    ng-model="selectedMake"
+                    ng-options="key as key for (key , value) in makesAndModels">
+
+            </select>
+            <select
+                    ng-model="selectedModel"
+                    ng-options="model as model for model in makesAndModels[selectedMake]"
+                    ng-disabled="!selectedMake">
+            </select>
+
+            <div class="required-field-block">
+                <input type="text" placeholder="Year" class="form-control">
+
+            </div>
+            <div class="required-field-block">
+                <input type="text" placeholder="Mileage" class="form-control">
+
+            </div>
+            <div class="required-field-block">
+                <input type="text" placeholder="Price" class="form-control">
+
+            </div>
+            <div class="required-field-block">
+                <textarea rows="3" class="form-control" placeholder="Description"></textarea>
+
+            </div>
+
+
+            <button class="btn btn-primary">Send</button>
+        </form>
+
 </div>
+
+<!--name-->
+<!--phone-->
+<!--email-->
+
+
+<!--make: String,-->
+<!--model: String,-->
+<!--year: Number,-->
+<!--mileage: Number,-->
+<!--price: Number,-->
+<!--description: Number-->
+
+
+        <!--for when I want to implement uploading photos-->
+<!--&lt;!&ndash; File Button &ndash;&gt;-->
+<!--<div class="control-group">-->
+    <!--<label class="control-label" for="filebutton">File Button</label>-->
+    <!--<div class="controls">-->
+        <!--<input id="filebutton" name="filebutton" class="input-file" type="file">-->
+    <!--</div>-->
+<!--</div>-->

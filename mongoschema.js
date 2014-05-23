@@ -13,7 +13,7 @@ var addSchema = mongoose.Schema({  // pulled in from dans app, needs more custom
     description: Number
 });
 
-var Listing = mongoose.model('listing', addSchema);
+var Listing = mongoose.model('adds', addSchema);
 
 module.exports = Listing;
 

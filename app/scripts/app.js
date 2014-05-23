@@ -2,7 +2,7 @@
 
 
 
-var myapp = angular.module('motoApp', ['ui.router' ]);
+var myapp = angular.module('motoApp', ['ui.router']);
 
     myapp.config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
@@ -18,7 +18,6 @@ var myapp = angular.module('motoApp', ['ui.router' ]);
             controller: 'SearchCtrl',
             resolve: {
                 adds: function (Search) {
-
                     return Search.getAdds();
                 }
         }
