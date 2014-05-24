@@ -11,7 +11,7 @@ angular.module('motoApp')
             $http({method: 'GET', url: 'www.utahmotomarket.com/search/'})   // for local host 'http://localhost:9001/search/'
                 .success(function(data){
                     deferred.resolve(data);
-                });
+                }).error(function(err) { console.log(err) });
 
 //            $http({method: 'GET', url: 'www.utahmotomarket.com/search/'})
 //                .success(function(data){
