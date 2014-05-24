@@ -64,8 +64,6 @@ app.post('/listing', api.postAdd );
 
 
 
-app.listen(80, function (){
-    console.log("server listening at port 80..")
-});
+app.listen(80);
 
 
