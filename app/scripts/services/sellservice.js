@@ -6,21 +6,14 @@ angular.module('motoApp')
 
 
         return {
-            postAdd: function(){
+            postAdd: function(listing){
+                console.log(listing);
 
-                var makeAdd = function(sellerName, sellerPhone, sellerEmail, bikeMake, bikeModel, bikeYear, bikeMileage, bikePrice,
-                         bikeTitle, bikeDescription) {
 
-                    var newListing = { name: sellerName, phone: sellerPhone, email: sellerEmail , make: bikeMake,
-                        model:bikeModel, year:bikeYear, mileage:bikeMileage, price:bikePrice, title:bikeTitle, description:bikeDescription,};
-                    console.log(newListing)
-                    return(newListing);
-                }
-                    var newAdd = makeAdd();
 
                 var deferred = $q.defer();
 
-                $http.post('http://www.utahmotomarket.com/saveAdd/', newAdd)  // for local host 'http://localhost:9001/saveAdd/'
+                $http.post('http://localhost:9001/listing/', listing)  // for local host
                     .success(function(data){
                         deferred.resolve(data);
                         alert("the post worked", data)
@@ -38,7 +31,7 @@ angular.module('motoApp')
 //                });
 
 
-//            $http({method: 'POST', url: 'www.utahmotomarket.com/saveAdd/'})
+//            $http({method: 'POST', url: 'http://www.utahmotomarket.com/saveAdd/'})
 //                .success(function(data){
 //                    deferred.resolve(data);
 //                });

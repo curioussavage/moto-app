@@ -28,7 +28,7 @@ exports.postAdd = function(req, res) {
         price: req.body.price,
         description: req.body.description
 
-    }
+    };
     var newAdd = new Listing(addInfo)
     console.log(newAdd);
         newAdd.save(function(err){

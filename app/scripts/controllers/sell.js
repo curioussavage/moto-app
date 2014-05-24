@@ -26,37 +26,17 @@ var makesAndModels = {
     ]
 };
 
-var sellerName,
-    sellerPhone,
-    sellerEmail,
-    bikeMake,
-    bikeModel,
-    bikeMileage,
-    bikeYear,
-    bikePrice,
-    bikeTitle,
-    bikeDescription;
+
 
 
 angular.module('motoApp')
   .controller('SellCtrl', function ($scope, Sell) {
-
-//    $scope.postedAdd = post
         $scope.makesAndModels = makesAndModels;
-
-        $scope.name = sellerName;
-        $scope.phone = sellerPhone;
-        $scope.email = sellerEmail;
-        $scope.selectedMake = bikeMake;
-        $scope.selectedModel = bikeModel;
-        $scope.year = bikeYear;
-        $scope.mileage = bikeMileage;
-        $scope.price = bikePrice;
-        $scope.title = bikeTitle;
-        $scope.description = bikeDescription;
-
-        $scope.submit = Sell.postAdd;
+//    $scope.postedAdd = post
+        $scope.listing = {};
 
 
-
+        $scope.submit = function () {
+            Sell.postAdd($scope.listing);
+        }
   });
