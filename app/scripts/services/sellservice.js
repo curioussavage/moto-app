@@ -13,6 +13,7 @@ angular.module('motoApp')
 
                     var newListing = { name: sellerName, phone: sellerPhone, email: sellerEmail , make: bikeMake,
                         model:bikeModel, year:bikeYear, mileage:bikeMileage, price:bikePrice, title:bikeTitle, description:bikeDescription,};
+                    console.log(newlisting)
                     return(newListing);
                 }
                     var newAdd = makeAdd();
