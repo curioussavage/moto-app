@@ -10,7 +10,7 @@ var makesAndModels = {
         'Ninja 250', 'Ninja 500', 'Ninja 600'
     ],
     'Ducati': [
-        'Monster', 'Street Fighter',
+        'Monster', 'Street Fighter'
     ],
     'Harley Davidson': [
         'touring' ,'softail' , 'Dyna','Sportster','VRSC','Street'
@@ -26,12 +26,37 @@ var makesAndModels = {
     ]
 };
 
+var sellerName,
+    sellerPhone,
+    sellerEmail,
+    bikeMake,
+    bikeModel,
+    bikeMileage,
+    bikeYear,
+    bikePrice,
+    bikeTitle,
+    bikeDescription;
 
 
 angular.module('motoApp')
-  .controller('SellCtrl', function ($scope) {
+  .controller('SellCtrl', function ($scope, Sell) {
 
 //    $scope.postedAdd = post
         $scope.makesAndModels = makesAndModels;
+
+        $scope.name = sellerName;
+        $scope.phone = sellerPhone;
+        $scope.email = sellerEmail;
+        $scope.selectedMake = bikeMake;
+        $scope.selectedModel = bikeModel;
+        $scope.year = bikeYear;
+        $scope.mileage = bikeMileage;
+        $scope.price = bikePrice;
+        $scope.title = bikeTitle;
+        $scope.description = bikeDescription;
+
+        $scope.submit = Sell.postAdd;
+
+
 
   });
