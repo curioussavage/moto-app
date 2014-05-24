@@ -13,14 +13,14 @@ angular.module('motoApp')
 
                     var newListing = { name: sellerName, phone: sellerPhone, email: sellerEmail , make: bikeMake,
                         model:bikeModel, year:bikeYear, mileage:bikeMileage, price:bikePrice, title:bikeTitle, description:bikeDescription,};
-                    console.log(newlisting)
+                    console.log(newListing)
                     return(newListing);
                 }
                     var newAdd = makeAdd();
 
                 var deferred = $q.defer();
 
-                $http.post('www.utahmotomarket.com/saveAdd/', newAdd)  // for local host 'http://localhost:9001/saveAdd/'
+                $http.post('http://www.utahmotomarket.com/saveAdd/', newAdd)  // for local host 'http://localhost:9001/saveAdd/'
                     .success(function(data){
                         deferred.resolve(data);
                         alert("the post worked", data)
