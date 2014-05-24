@@ -8,14 +8,14 @@ angular.module('motoApp')
         return {
             postAdd: function(){
 
-                var newAdd = function(sellerName, sellerPhone, sellerEmail, bikeMake, bikeModel, bikeYear, bikeMileage, bikePrice,
+                var makeAdd = function(sellerName, sellerPhone, sellerEmail, bikeMake, bikeModel, bikeYear, bikeMileage, bikePrice,
                          bikeTitle, bikeDescription) {
 
                     var newListing = { name: sellerName, phone: sellerPhone, email: sellerEmail , make: bikeMake,
                         model:bikeModel, year:bikeYear, mileage:bikeMileage, price:bikePrice, title:bikeTitle, description:bikeDescription,};
                     return(newListing);
                 }
-
+                    var newAdd = makeAdd();
 
                 var deferred = $q.defer();
 
@@ -24,6 +24,18 @@ angular.module('motoApp')
                         deferred.resolve(data);
                         alert("the post worked", data)
                     });
+
+//                $http({
+//                    url: 'www.utahmotomarket.com/saveAdd/',
+//                    method: "POST",
+//                    data: newListing,
+//                    headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+//                }).success(function (data, status, headers, config) {
+//                    $scope.persons = data; // assign  $scope.persons here as promise is resolved here
+//                }).error(function (data, status, headers, config) {
+//                    $scope.status = status;
+//                });
+
 
 //            $http({method: 'POST', url: 'www.utahmotomarket.com/saveAdd/'})
 //                .success(function(data){
