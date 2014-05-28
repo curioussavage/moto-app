@@ -10,7 +10,7 @@ var addSchema = mongoose.Schema({  // pulled in from dans app, needs more custom
     year: Number,
     mileage: Number,
     price: Number,
-    description: Number
+    description: String
 });
 
 var Listing = mongoose.model('adds', addSchema);

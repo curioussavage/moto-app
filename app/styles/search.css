@@ -1,5 +1,5 @@
 #searchresults {
-    width: 68%;
+    width: 80%;
     float: right;
     /*height: 700px;*/
 }
@@ -17,14 +17,14 @@ li {
 }
 .mainpic {
     float: left;
-    width: 10em;
-    height: 10em;
+    width: 11em;
+    height: 11em;
 }
 
 #searchbox {
   float: left;
     /*border: 2px solid black;*/
-    width: 30%;
+    width: 20%;
     padding: 10px;
 }
 
@@ -36,9 +36,17 @@ li {
 }
 
 #searchcontainer {
-    max-width: 700px;
+    max-width: 1100px;
+    width: 1000px;
     /*height: 800px;*/
 
+}
+
+.descriptionbox {
+    min-height: 200px;
+}
+.popupimage {
+    border-radius: 5px;
 }
 /* style from bootsnip real estate example */
 
