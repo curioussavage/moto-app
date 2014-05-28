@@ -1,8 +1,12 @@
 'use strict';
 
-angular.module('motoApp')
-  .controller('SearchCtrl', function ($scope, adds) {
 
+
+angular.module('motoApp')
+  .controller('SearchCtrl', function ($scope, adds, makeAndModel ) {
+        $scope.makesAndModels = makeAndModel.makesAndModels;
+
+        $scope.search = {};
 
         $scope.searchresults = adds;
 

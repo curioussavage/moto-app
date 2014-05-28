@@ -17,14 +17,15 @@ li {
 }
 .mainpic {
     float: left;
-    width: 11em;
-    height: 11em;
+    max-width: 400px;
+    max-height: 400px;
 }
 
 #searchbox {
   float: left;
     /*border: 2px solid black;*/
     width: 20%;
+    min-width: 124px;
     padding: 10px;
 }
 
@@ -44,9 +45,17 @@ li {
 
 .descriptionbox {
     min-height: 200px;
+    padding: 10px;
 }
 .popupimage {
     border-radius: 5px;
+}
+.priceMakeModel {
+    margin: 0 auto;
+    margin-left: 20px;
+}
+.popupTitle {
+    margin-left: 10px;
 }
 /* style from bootsnip real estate example */
 
