@@ -6,6 +6,7 @@ angular.module('motoApp')
 
         return {
             makesAndModels: {
+
                 'BMW': [
                     'black', 'red', 'green'
                 ],

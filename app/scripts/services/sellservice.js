@@ -16,7 +16,7 @@ angular.module('motoApp')
                 $http.post('http://localhost:9001/listing/', listing)  // for local host
                     .success(function(data){
                         deferred.resolve(data);
-                        alert("the post worked", data)
+
                     });
 
 

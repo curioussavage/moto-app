@@ -36,12 +36,12 @@ exports.searchAdds = function (req, res) {
        if (searchParams.keywords) {searchParams.keywords = searchParams.keywords.split(" ");} else {searchParams.keywords = " "}
 
     Listing.find()
-        .where('title' || 'description').in(searchParams.keywords)
-        .where('price').gte(searchParams.lowPrice)
+//        .where('title' || 'description').in(searchParams.keywords)
+//        .where('price').gte(searchParams.lowPrice)
         .where('price').lte(searchParams.highPrice)
-        .where('make').in(searchParams.make)
-        .where('model').in(searchParams.model)
-        .where('mileage').lte(searchParams.mileage)
+//        .where('make').in(searchParams.make)
+//        .where('model').in(searchParams.model)
+//        .where('mileage').lte(searchParams.mileage)
         .exec(function(err, result){
             if (err) {console.log(err)}
             console.log(result)

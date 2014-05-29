@@ -9,13 +9,23 @@ angular.module('motoApp')
         $scope.search = {};
 
         $scope.searchresults = adds;
+        console.log($scope.searchresults)
 
-        $scope.submit = function (search) {
-            console.log(search)
-            Search.searchAdds(search, function(err, data) {
-                if (err) {alert(err)}
-                $scope.searchresults = data
+        $scope.searchDatabase = function (search) {
+            console.log("searchDatabase called")
+            Search.searchAdds(search).then(function(data){
+                console.log(data)
+                $scope.searchresults = data   // data is being attached just fine but the ng-repeat is not iterating through it again.
+
+
             });
+
+
+
+
+
+
+
         }
 
 //        for testing of the ng-repeat

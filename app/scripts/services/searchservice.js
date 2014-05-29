@@ -43,7 +43,8 @@ angular.module('motoApp')
                 $http.post('http://localhost:9001/search/', params)  // for local host
                     .success(function(data){
                         deferred.resolve(data);
-                        alert("the post worked", data)
+
+
                     });
 
 

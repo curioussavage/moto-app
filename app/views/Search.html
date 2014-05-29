@@ -2,9 +2,9 @@
 <!--<h2>Find Your next bike!</h2>-->
 <div id="searchbox" class="well">
     <!-- form for searching Adds-->
-    <form class="form-horizontal form-group" ng-submit="submit()">
+    <form class="form-horizontal form-group" ng-submit="searchDatabase(search)" >
         <!-- keyword search-->
-        <label>Search  </label><br><input label="Search"  type="text" class = "input-large form-control" ng-model="search.keywords"><br> // ng model was search.$
+        <label>Search  </label><br><input label="Search"  type="text" class = "input-large form-control" ng-model="search.keywords"><br> <!--ng model was search.$ --!>
         <!-- select high and low price!!-->
         <label>Price Range  </label><br><input label="Search"  type="text" ng-model="search.lowPrice" class = "input-large form-control" placeholder="Low"><br>
         <input label="Search"  type="text" ng-model="search.highPrice" class = "input-large form-control" placeholder="High"><br>
@@ -28,8 +28,10 @@
                     ng-options="model as model for model in makesAndModels[search.make]"
                     ng-disabled="!search.make">
             </select>
-
+                <br>
         <button class="btn btn-primary" type="submit">Submit</button>
+
+
 
         <!--<div class="btn-group makemenu" >-->
             <!--<button class="btn btn-default btn-sm dropdown-toggle " id="searchbuttons" type="button" data-toggle="dropdown">-->
