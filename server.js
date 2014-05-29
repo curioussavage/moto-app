@@ -56,7 +56,7 @@ db.once('open', function callback () {
 
 
 app.get('/search', api.seeAdds);
-
+app.post('/search', api.searchAdds);
 
 app.post('/listing', api.postAdd );
 

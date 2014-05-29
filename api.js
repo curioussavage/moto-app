@@ -10,12 +10,45 @@ exports.seeAdds = function(req, res){
     Listing.find()
 
         .exec(function(err, listings) {
-            console.log("the query returned: ", listings);
+
             res.send(200, listings);
         });
 
 }
 
+exports.searchAdds = function (req, res) {
+    var searchParams = {
+        keywords : req.body.keywords,
+        lowPrice : req.body.lowPrice,
+        highPrice :  req.body.highPrice,
+
+        make : req.body.make,
+        model : req.body.model,
+        mileage : req.body.mileage
+    }
+
+       if (!searchParams.highPrice) {searchParams.highPrice = 100000;}
+       if (!searchParams.lowPrice) {searchParams.lowPrice = 0;}
+       if (!searchParams.make) {searchParams.make = " ";}
+       if (!searchParams.model) {searchParams.model = " ";}
+       if (!searchParams.mileage) {searchParams.mileage = 100000;}
+
+       if (searchParams.keywords) {searchParams.keywords = searchParams.keywords.split(" ");} else {searchParams.keywords = " "}
+
+    Listing.find()
+        .where('title' || 'description').in(searchParams.keywords)
+        .where('price').gte(searchParams.lowPrice)
+        .where('price').lte(searchParams.highPrice)
+        .where('make').in(searchParams.make)
+        .where('model').in(searchParams.model)
+        .where('mileage').lte(searchParams.mileage)
+        .exec(function(err, result){
+            if (err) {console.log(err)}
+            console.log(result)
+            res.send(result);
+
+        })
+}
 
 
 exports.postAdd = function(req, res) {
@@ -36,6 +69,7 @@ exports.postAdd = function(req, res) {
 
         res.json(newAdd);
     })
+
 
 
 
