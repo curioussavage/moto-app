@@ -28,7 +28,29 @@ passport.use(new LocalStrategy(
 
 
 // start up express app
+
 var app = express();
+
+// Define a middleware function to be used for every secured routes
+
+var auth = function(req, res, next){
+    if (!req.isAuthenticated()) res.send(401);
+    else next();
+};
+
+   // for admin
+//app.get('/users', auth, user.list);
+
+// route to log in //
+
+app.post('/login', passport.authenticate('local'), function(req, res) {
+    res.send(req.user);
+});
+
+// route to log out
+ app.post('/logout', function(req, res){
+     req.logOut(); res.send(200);
+ });
 
 // serve static files
 app.use(express.static( __dirname + '/app'));
