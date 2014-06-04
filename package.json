@@ -4,7 +4,10 @@
   "dependencies": {
     "express": "4.1.1",
     "mongoose": "*",
-    "body-parser": "^1.0.2"
+    "body-parser": "^1.0.2",
+    "cookie-parser": "^1.1.0",
+    "passport": "^0.2.0",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
