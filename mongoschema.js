@@ -16,6 +16,10 @@ var addSchema = mongoose.Schema({  // pulled in from dans app, needs more custom
 
 var Listing = mongoose.model('adds', addSchema);
 
+//Listing.index({ make: 'text' });  I think this will only work with the mongoose-text-search module
+//Listing.index({ model: 'text' });
+
+
 module.exports = Listing;
 
 

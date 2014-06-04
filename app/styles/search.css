@@ -17,7 +17,7 @@ li {
 }
 .mainpic {
     float: left;
-    max-width: 100%;
+    max-width: 240px;
     max-height: 400px;
 }
 
@@ -58,6 +58,19 @@ li {
 .popupTitle {
     margin-left: 10px;
 }
+
+.favmodal {
+    background-color: #4585ff;
+    width:300px;
+    height: 300px;
+    float: right;
+
+}
+.mainmodal {
+    /*width:700px;*/
+}
+
+
 /* style from bootsnip real estate example */
 
 /**** BASE ****/
@@ -130,6 +143,11 @@ a {
     }
     #property-listings .property-listing .media-body {
         padding: 10px;
+    }
+    .mainpic {
+        float: left;
+        max-width: 350px;
+        max-height: 400px;
     }
 }
 

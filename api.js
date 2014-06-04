@@ -18,31 +18,67 @@ exports.seeAdds = function(req, res){
 
 exports.searchAdds = function (req, res) {
     var searchParams = {
-        keywords : req.body.keywords,
-        lowPrice : req.body.lowPrice,
-        highPrice :  req.body.highPrice,
+        keywords: req.body.keywords,
+        lowPrice: req.body.lowPrice,
+        highPrice: req.body.highPrice,
 
-        make : req.body.make,
-        model : req.body.model,
-        mileage : req.body.mileage
+        make: req.body.make,
+        model: req.body.model,
+        mileage: req.body.maxMileage
+    }
+     console.log(searchParams)
+
+
+    // change searchParams.make into an array for now
+    if (searchParams.make) {
+        console.log("make array converter ran")
+
+        var x = searchParams.make;
+
+        searchParams.make = [];
+        searchParams.make.push(x);
     }
 
-       if (!searchParams.highPrice) {searchParams.highPrice = 100000;}
-       if (!searchParams.lowPrice) {searchParams.lowPrice = 0;}
-       if (!searchParams.make) {searchParams.make = " ";}
-       if (!searchParams.model) {searchParams.model = " ";}
-       if (!searchParams.mileage) {searchParams.mileage = 100000;}
+        // change model into array as well.
+      if (searchParams.model)  {
+          console.log("model array converter ran")
+        var y = searchParams.model;
+        searchParams.model = [];
+        searchParams.model.push(y) ;
+      }
 
-       if (searchParams.keywords) {searchParams.keywords = searchParams.keywords.split(" ");} else {searchParams.keywords = " "}
 
-    Listing.find()
-//        .where('title' || 'description').in(searchParams.keywords)
-//        .where('price').gte(searchParams.lowPrice)
-        .where('price').lte(searchParams.highPrice)
-//        .where('make').in(searchParams.make)
-//        .where('model').in(searchParams.model)
-//        .where('mileage').lte(searchParams.mileage)
-        .exec(function(err, result){
+
+
+//       if (!searchParams.highPrice) {searchParams.highPrice = 100000;}
+//       if (!searchParams.lowPrice) {searchParams.lowPrice = 0;}
+//       if (!searchParams.mileage) {searchParams.mileage = 100000;}
+//       if (searchParams.keywords) {searchParams.keywords = searchParams.keywords.split(" ");} else {searchParams.keywords = " "}
+        console.log("this is the result of splitting the keywords", searchParams.keywords);
+
+
+    var query = Listing.find({description: new RegExp(searchParams.keywords, "i")} || {title: new RegExp(searchParams.keywords, "i")})    //{title: /coolest/i} test query for keywords
+//         if (searchParams.keywords) { query.where() }
+//        if (searchParams.keywords) {
+//            query.where('description').in(searchParams.keywords)    //new RegExp(searchParams.keywords, 'i')
+//            query.or([])   where('title' ).in(searchParams.keywords)
+//        }
+
+        if (searchParams.lowPrice) {query.where('price').gte(searchParams.lowPrice) }
+
+        if (searchParams.highPrice) {query.where('price').lte(searchParams.highPrice)}
+
+        if (searchParams.make) {
+
+            query.where('make').in(searchParams.make) }
+
+        if (searchParams.model) {
+
+            query.where('model').in(searchParams.model) }
+
+        if (searchParams.mileage) {query.where('mileage').lte(searchParams.mileage) }
+
+        query.exec(function(err, result){
             if (err) {console.log(err)}
             console.log(result)
             res.send(result);

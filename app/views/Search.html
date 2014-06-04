@@ -81,12 +81,17 @@
        <!--<div>{{result.description}}</div>-->
 
    <!--</div>-->
+    <div class="modal favmodal" ng-show="myValue">
+        <div>this is a test modal blah blah blah</div>
+    </div>
 
-    <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing" ng-repeat="result in searchresults | filter:search:strict">
+    <div class="brdr bgc-fff pad-10 box-shad btm-mrg-20 property-listing" ng-repeat="result in searchresults ">  <!-- | filter:search:strict  removed filter to troubleshooting-->
         <div class="media">
 
             <a class="pull-left" href=".{{result._id}}" target="_parent" data-toggle="modal">
-                <img alt="image" class="img-responsive mainpic" src="images/Motorcycle_by_Diacon.jpg"></a>
+
+                <img alt="image" class="img-responsive mainpic" src="images/Motorcycle_by_Diacon.jpg">
+            </a>
 
             <div class="clearfix visible-sm"></div>
 
@@ -113,13 +118,17 @@
                 <span class="fnt-smaller fnt-lighter fnt-arial">{{result.phone}}</span>
             </div>
         </div>
-                    <!--  modal popup for add  -->
-        <div class="modal fade bs-example-modal-lg {{result._id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+
+        <!--  modal popup for add  -->
+        <!--to do: move modal outside ng repeat make function to populate modal for current add !!!!!!!-->
+
+
+        <div class="modal fade bs-example-modal-lg {{result._id}} mainmodal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" >
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                     <img alt="image" class="img-responsive popupimage" src="images/Motorcycle_by_Diacon.jpg"></a><hr>
                     <h2 class="popupTitle">{{result.title}}</h2>
-                 <div class ="priceMakeModel">   $ {{result.price}} | Make: {{result.make}} | Model: {{result.model}} | Year: {{result.year}}</div>   <br>
+                    <div class ="priceMakeModel">   $ {{result.price}} | Make: {{result.make}} | Model: {{result.model}} | Year: {{result.year}}</div>   <br>
                     <hr>
                     <div class = "descriptionbox">
                         {{result.description}}
@@ -129,12 +138,15 @@
         </div>
 
 
+
     </div>
 
 
-</div>
+
 
 </div>
+
+
 
 <!--
         listing from bootsnipp real estate listing example
