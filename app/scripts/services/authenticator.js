@@ -13,7 +13,7 @@ angular.module('motoApp')
 
                     var deferred = $q.defer();
 
-                    $http.post('http://localhost:9001/listing/', listing)  // for local host
+                    $http.post('http://localhost:9001/listing/' )  // for local host
                         .success(function(data){
                             deferred.resolve(data);
 
@@ -30,7 +30,7 @@ angular.module('motoApp')
 
                 var deferred = $q.defer();
 
-                $http.post('http://localhost:9001/listing/', listing)  // for local host
+                $http.post('http://localhost:9001/listing/' )  // for local host
                     .success(function(data){
                         deferred.resolve(data);
 

@@ -8,7 +8,7 @@ angular.module('motoApp')
 
                 var deferred = $q.defer();
 
-                $http({method: 'GET', url: 'http://localhost:9001/search/'})   // for local host
+                $http({method: 'GET', url: 'http://localhost:9001/search/'})   // for local host    /sampleAdds.json
                     .success(function(data){
                         deferred.resolve(data);
                     }).error(function(err) { console.log(err) });

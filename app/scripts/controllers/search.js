@@ -3,7 +3,7 @@
 
 
 angular.module('motoApp')
-  .controller('SearchCtrl', function ($scope, adds, makeAndModel, Search ) {
+  .controller('SearchCtrl', function ($scope, adds, makeAndModel, Search, $modal) {
         $scope.makesAndModels = makeAndModel.makesAndModels;
 
         $scope.search = {};
@@ -20,18 +20,23 @@ angular.module('motoApp')
 
             });
 
+        };
 
 
 
 
+        var myOtherModal = $modal({scope: $scope, template: '../../views/modal.html', show: false});
+        // Show when some event occurs (use $promise property to ensure the template has been loaded)
+        $scope.toggleModal = function(result) {
+            $scope.modalResult = result;
+
+            myOtherModal.$promise.then(myOtherModal.show);
+            console.log($scope.modalResult)
+        };
+//
 
 
-        }
 
-//        for testing of the ng-repeat
-//        $scope.searchresults = [{title: "cool bike",make:"honda" ,model:"shadow" ,price:200 ,description: "this is a description"},
-//            {title: "cool bike",make:"honda" ,model:"shadow" ,price:200 ,description: "this is a description"},
-//            {title: "cool bike",make:"honda" ,model:"shadow" ,price:200 ,description: "this is a description"}]
 
 
   });

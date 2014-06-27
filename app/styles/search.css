@@ -1,3 +1,5 @@
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
 #searchresults {
     width: 78%;
     float: right;
@@ -17,7 +19,7 @@ li {
 }
 .mainpic {
     float: left;
-    max-width: 240px;
+    max-width: 340px;
     max-height: 400px;
 }
 
@@ -50,6 +52,7 @@ li {
 }
 .popupimage {
     border-radius: 5px;
+    width:100%;
 }
 .priceMakeModel {
     margin: 0 auto;
@@ -69,7 +72,22 @@ li {
 .mainmodal {
     /*width:700px;*/
 }
-
+.modal-backdrop.am-fade {
+    opacity: .5;
+    transition: opacity .15s linear;
+&.ng-enter {
+     opacity: 0;
+&.ng-enter-active {
+     opacity: .5;
+ }
+}
+&.ng-leave {
+     opacity: .5;
+&.ng-leave-active {
+     opacity: 0;
+ }
+}
+}
 
 /* style from bootsnip real estate example */
 
@@ -146,8 +164,15 @@ a {
     }
     .mainpic {
         float: left;
-        max-width: 350px;
+        max-width: 500px;
         max-height: 400px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .mainpic {
+        max-width: 250px;
+        max-height: 300px;
     }
 }
 

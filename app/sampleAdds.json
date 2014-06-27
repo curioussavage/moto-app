@@ -1,0 +1,30 @@
+[
+{
+	"description": "this is my description of an add this is my description of an add this is my description of an add this is my description of an add this is my description of an add this is my description of an add",
+"make": "BMW",
+"mileage": 20000,
+"model"  : "black",
+"price": 10000,
+"title": "this is the best don't you think",
+"year": 2000
+	},
+{
+	"description": "test add for my website. this is a test to help me test when I dont have internet connection",
+"make": "Honda",
+"mileage": 10000,
+"model"  : "CBR 250",
+"price": 5300,
+"title": "cool bike",
+"year": 1998
+	},
+{
+	"description": "test add for my website.Blah blah blah  Blah blah blah Blah blah blah Blah blah blah net connection",
+"make": "Yamaha",
+"mileage": 6000,
+"model"  : "R6",
+"price": 12350,
+"title": "Fastest bike ever",
+"year": 2005
+	}
+
+]

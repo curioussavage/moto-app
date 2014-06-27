@@ -9,7 +9,8 @@ angular.module('motoApp')
         $scope.listing = {};
         $scope.newUser = {};
         $scope.userToLogin = {};
-        $scope.loggedIn = false;
+
+        $scope.loggedIn = true;
 
         $scope.user = {};
 

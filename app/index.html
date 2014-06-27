@@ -50,27 +50,39 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
+  <script src="bower_components/angular-strap/dist/angular-strap.min.js"></script>
+
+  <script src="bower_components/json3/lib/json3.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <!-- endbower -->
+    <script src="bower_components/cloudinary_js/js/jquery.ui.widget.js"></script>
+    <script src="bower_components/cloudinary_js/js/jquery.iframe-transport.js"></script>
+    <script src="bower_components/cloudinary_js/js/jquery.fileupload.js"></script>
+    <script src="bower_components/cloudinary_js/js/jquery.cloudinary.js"></script>
+
+  <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+
         <script src="scripts/controllers/search.js"></script>
         <script src="scripts/services/searchservice.js"></script>
         <script src="scripts/controllers/sell.js"></script>
         <script src="scripts/services/sellservice.js"></script>
         <script src="scripts/services/makeandmodel.js"></script>
         <script src="scripts/services/authenticator.js"></script>
+
+        <script src="scripts/services/cloudinary.js"></script>
+        <script src="scripts/controllers/cloudinaryupload.js"></script>
         <!-- endbuild -->
 </body>
 </html>

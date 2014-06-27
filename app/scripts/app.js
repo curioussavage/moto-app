@@ -2,7 +2,7 @@
 
 
 
-var myapp = angular.module('motoApp', ['ui.router']);
+var myapp = angular.module('motoApp', ['ui.router', 'mgcrea.ngStrap']);
 
     myapp.config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
